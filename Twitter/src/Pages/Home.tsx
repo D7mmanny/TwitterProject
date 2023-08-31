@@ -1,8 +1,10 @@
 import React from "react";
 import NewTwit from "../Components/NewTwit";
+import{useState} from "react"
 
 
 function Home() {
+    const [active,setActive]=useState("Home")
     return (
         <div>
         <div className="flex ">
@@ -20,7 +22,11 @@ function Home() {
                 </svg>
 
                 <div className=" flex flex-col gap-10">
-                <a href="" className="flex hover:text-sky-500 ">
+                <a 
+                href="" 
+                className="flex hover:text-sky-500 "
+                onClick={()=>{setActive("Home")}}
+                >
                     <svg
                     className="mr-4 h-8 w-8 "
                     stroke="currentColor"
@@ -107,7 +113,11 @@ function Home() {
                     </svg>
                     Lists
                 </a>
-                <a href="" className="flex hover:text-sky-500">
+                <a 
+                href="" 
+                className="flex hover:text-sky-500"
+                onClick={()=>{setActive("Profile")}}
+                >
                     <svg
                     className="mr-4 h-8 w-8"
                     fill="none"
@@ -149,8 +159,9 @@ function Home() {
                 <div>
                     <NewTwit/>
                 </div>
+                {/* all twit */}
                 <div>
-
+                {active=="Home" && <NewTwit/>}
                 </div>
             </div>
 
