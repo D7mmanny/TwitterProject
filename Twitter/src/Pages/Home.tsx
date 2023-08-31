@@ -1,4 +1,6 @@
 import React from "react";
+import NewTwit from "../Components/NewTwit";
+
 
 function Home() {
     return (
@@ -142,7 +144,15 @@ function Home() {
             </div>
 
             {/* The middle side */}
-            <div className=" w-5/12 h-screen"></div>
+            <div className=" w-5/12 h-screen">
+                {/* new twit */}
+                <div>
+                    <NewTwit/>
+                </div>
+                <div>
+
+                </div>
+            </div>
 
             {/* Right side */}
             <div className=" w-4/12 h-screen border-solid border-x-4  border-b-slate-950 pl-5 ">
