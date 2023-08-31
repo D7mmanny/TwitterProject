@@ -156,12 +156,13 @@ function Home() {
                     </button>
                     <input type="text" className=" pl-4 outline-none w-2/3 bg-zinc-200" placeholder="Search Twitter" />
                 </div>
-                {/* trending */}
-                <div className="border-solid border-2 r w-5/6 h-4/5 mt-5 rounded-2xl  bg-zinc-200">
-                <div className="flex justify-between">
-                    <h1 className="text-xl px-5 pt-2"><b> Our accounts</b></h1>
+                {/*setting  */}
+                <div className="border-solid border-2 r w-5/6 h-4/5 my-5 rounded-2xl  bg-zinc-200">
+                    {/* trending */}
+                <div className="flex justify-between my-2">
+                    <h1 className="text-xl px-5"><b> Our accounts</b></h1>
                     <svg 
-                    className="m-2 h-6 w-6 text-sky-500" 
+                    className="mr-2 h-6 w-6 text-sky-500" 
                     fill="none" 
                     stroke-linecap="round" 
                     stroke-linejoin="round" 
@@ -173,9 +174,30 @@ function Home() {
                             <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
                                 </path>
                                 </svg>
+                    
+                </div>
+
+                    <div className="border-solid border-y-2 border-gray-300 p-5">
+                        <p className="text-gray-400">Git hup account</p>
+                        <a href=""><b>Abdulrahman</b> </a>
+                    </div>
+                    <div className="border-solid border-b-2 border-gray-300 p-5">
+                        <p className="text-gray-400">Git hup account</p>
+                        <a href=""><b>Abdulrahman</b> </a>
+                    </div>
+                    <div className="border-solid border-b-2 border-gray-300 p-5">
+                        <p className="text-gray-400">Git hup account</p>
+                        <a href=""><b>Abdulrahman</b> </a>
+                    </div>
+                    <div className="border-solid border-b-2 border-gray-300 p-5">
+                        <p className="text-gray-400">Git hup account</p>
+                        <a href=""><b>Abdulrahman</b> </a>
+                    </div>
 
                 </div>
-                </div>
+                
+
+                
             </div>
         </div>
         </div>
