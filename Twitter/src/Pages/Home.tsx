@@ -23,7 +23,6 @@ function Home() {
 
                 <div className=" flex flex-col gap-10">
                 <a 
-                href="" 
                 className="flex hover:text-sky-500 "
                 onClick={()=>{setActive("Home")}}
                 >
@@ -114,7 +113,7 @@ function Home() {
                     Lists
                 </a>
                 <a 
-                href="" 
+                
                 className="flex hover:text-sky-500"
                 onClick={()=>{setActive("Profile")}}
                 >
