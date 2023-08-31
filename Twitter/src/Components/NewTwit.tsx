@@ -3,7 +3,7 @@ import React from 'react'
 function NewTwit() {
     return (
         <div>
-            
+            {/* title */}
             <div className="flex justify-between border-soled border-b-2 p-5  ">
             <h1 className="text-2xl"> <b>Home</b></h1> 
             <svg 
@@ -16,7 +16,7 @@ function NewTwit() {
                 </g>
             </svg>
             </div>
-
+            {/* twit massage */}
             <div className='flex pt-7  p-5'>
                 <img 
                 className="border rounded-full w-14 h-14 p-0 mx-3"
@@ -29,24 +29,67 @@ function NewTwit() {
                 rows={3} 
                 placeholder='What is happening'></textarea>
             </div>
+            {/* button and icon */}
             <div className='flex border-soled border-b-8'>
-                <ul>
+                <ul className='flex justify-evenly w-4/5 items-center text-sky-500'>
                     <a href="">
-                    <svg 
-                    className="text-center h-7 w-6" 
-                    fill="none" 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round" 
-                    stroke-width="2" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24">
-                        <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                        </path>
-                    </svg>
-
+                        <svg 
+                        className="text-center h-7 w-6" 
+                        fill="none" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24">
+                            <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg 
+                        className="text-center h-7 w-6" 
+                        fill="none" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" stroke="currentColor" 
+                        viewBox="0 0 24 24">
+                            <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg 
+                        className="text-center h-7 w-6" 
+                        fill="none" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" stroke="currentColor" 
+                        viewBox="0 0 24 24">
+                            <path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg 
+                        className="text-center h-7 w-6" 
+                        fill="none" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24">
+                            <path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
                     </a>
                 </ul>
-                <button>Tweet</button>
+
+                <div className='flex justify-end w-full my-5 mr-5'>
+                <button 
+                className='bg-sky-500 text-white w-32 h-12 rounded-full'>
+                <b>Tweet</b> 
+                </button>
+                </div>
 
                 </div>
                     
