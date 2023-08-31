@@ -157,11 +157,11 @@ function Home() {
             <div className=" w-5/12 h-screen">
                 {/* new twit */}
                 <div>
-                    <NewTwit/>
+                    {active=="Home" && <NewTwit/>}
                 </div>
                 {/* all twit */}
                 <div>
-                {active=="Home" && <NewTwit/>}
+                
                 </div>
             </div>
 
