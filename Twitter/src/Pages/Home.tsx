@@ -211,15 +211,15 @@ function Home() {
                     </div>
                     <div className="border-solid border-b-2 border-gray-200 p-5">
                         <p className="text-gray-400">Git hup account</p>
+                        <a href="https://github.com/shazmend"><b>Shatha</b> </a>
+                    </div>
+                    <div className="border-solid border-b-2 border-gray-200 p-5">
+                        <p className="text-gray-400">LinkedIn account</p>
                         <a href=""><b>Abdulrahman</b> </a>
                     </div>
                     <div className="border-solid border-b-2 border-gray-200 p-5">
-                        <p className="text-gray-400">Git hup account</p>
-                        <a href=""><b>Abdulrahman</b> </a>
-                    </div>
-                    <div className="border-solid border-b-2 border-gray-200 p-5">
-                        <p className="text-gray-400">Git hup account</p>
-                        <a href=""><b>Abdulrahman</b> </a>
+                        <p className="text-gray-400">LinkedIn account</p>
+                        <a href="https://www.linkedin.com/in/shatha-alfqih/"><b>Shatha</b> </a>
                     </div>
 
                 </div>
