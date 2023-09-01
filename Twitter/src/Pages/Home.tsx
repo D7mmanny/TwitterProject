@@ -179,12 +179,12 @@ function Home() {
             {/* The middle side */}
             <div className=" w-5/12 h-screen">
                 {/* new twit */}
-                <div>
+                <div className="h-2/5">
                     {active=="Home" && <NewTwit/>}
                     {active=="Profile" && <Profile/>}
                 </div>
                 {/* all twit */}
-                <div>
+                <div className="h-3/5 overflow-y-auto">
                     {apiTwit.map((item) =>{
                         return(
                         <>
