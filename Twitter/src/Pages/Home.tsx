@@ -4,6 +4,7 @@ import{useState} from "react"
 // Components
 import Profile from "../Components/Profile";
 import NewTwit from "../Components/NewTwit";
+import Twit from "../Components/Twit";
 
 
 function Home() {
@@ -161,6 +162,9 @@ function Home() {
                 <div>
                     {active=="Home" && <NewTwit/>}
                     {active=="Profile" && <Profile/>}
+                </div>
+                <div>
+                    <Twit imgUrl="" twitText="" lik="" />
                 </div>
                 {/* all twit */}
                 <div>
