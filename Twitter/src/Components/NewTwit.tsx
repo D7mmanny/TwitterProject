@@ -86,7 +86,7 @@ function NewTwit() {
 
                 <div className='flex justify-end w-full my-5 mr-5'>
                 <button 
-                className='bg-sky-500 text-white w-32 h-12 rounded-full'>
+                className='bg-sky-500 text-white w-24 h-10 rounded-full hover:bg-sky-600'>
                 <b>Tweet</b> 
                 </button>
                 </div>

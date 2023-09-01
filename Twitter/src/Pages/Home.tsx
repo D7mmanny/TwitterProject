@@ -21,13 +21,13 @@ function Home() {
                 </g>
                 </svg>
 
-                <div className=" flex flex-col gap-10">
+                <div className=" flex flex-col gap-10 text-lg">
                 <a 
-                className="flex hover:text-sky-500 "
+                className="flex hover:text-sky-500 cursor-pointer"
                 onClick={()=>{setActive("Home")}}
                 >
                     <svg
-                    className="mr-4 h-8 w-8 "
+                    className="mr-4 h-8 w-8"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -114,7 +114,7 @@ function Home() {
                 </a>
                 <a 
                 
-                className="flex hover:text-sky-500"
+                className="flex hover:text-sky-500 cursor-pointer"
                 onClick={()=>{setActive("Profile")}}
                 >
                     <svg
@@ -146,8 +146,8 @@ function Home() {
                 </a>
                 <a href="" className="flex hover:text-sky-500"></a>
                 </div>
-                <button className="h-16 bg-sky-500 rounded-full text-cyan-50">
-                Tweet
+                <button className="py-3 px-4 text-lg font-bold  bg-sky-500 rounded-full text-cyan-50 hover:bg-sky-600">
+                Post
                 </button>
             </div>
             </div>
