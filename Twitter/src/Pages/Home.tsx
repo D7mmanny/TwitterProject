@@ -1,6 +1,7 @@
 import React from "react";
 import{useState ,useEffect} from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 
 // Components
@@ -10,6 +11,7 @@ import Twit from "../Components/Twit";
 
 function Home() {
     const [active,setActive]=useState("Home")
+    const nav = useNavigate()
     type alltwt={
         username:string;
         twitText: string;
@@ -19,6 +21,12 @@ function Home() {
     }
 
     const [apiTwit,setApiTwit]=useState<alltwt[]>([])
+    const logOut = ()=>{
+        localStorage.removeItem("name");
+        localStorage.removeItem("username");
+        localStorage.removeItem("url");
+        nav("/")
+    }
 
     useEffect( ()=>{
         axios
@@ -334,7 +342,6 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
