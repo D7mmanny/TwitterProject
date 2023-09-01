@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 //components
 import Nav from "../Components/Nav";
@@ -9,6 +10,16 @@ function LogIn() {
     passWord: "",
     Like: "false",
   });
+
+  React.useEffect(() => {
+    axios
+      .get("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/users")
+      .then((response) => {
+        setUserApi(response.data);
+      });
+  });
+
+  const checkInfo = () => {};
   return (
     <div>
       <Nav />
@@ -16,30 +27,44 @@ function LogIn() {
         <div className="flex border w-9/12 drop-shadow-lg mt-20">
           {/* Left side */}
           <div className="flex flex-col gap-12 justify-center items-center w-4/6 bg-gray-100 py-32">
-                <h1 className="text-3xl">Log In</h1>
-                <div className="flex flex-col gap-5 justify-center items-center">
+            <h1 className="text-3xl">Log In</h1>
+            <div className="flex flex-col gap-5 justify-center items-center">
+              <input
+                className="py-2 px-12 rounded-xl drop-shadow-lg"
+                type="text"
+                placeholder="userName"
+              />
 
-                    <input 
-                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
-                    type="text" 
-                    placeholder="userName"/>
+              <input
+                className="py-2 px-12 rounded-xl drop-shadow-lg"
+                type="password"
+                placeholder="password"
+              />
+            </div>
 
-                    <input 
-                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
-                    type="password" 
-                    placeholder="password"/>
-                </div>
+            <div className="flex flex-col justify-center items-center gap-6">
+              <button
+                className="py-2 px-10 rounded-xl drop-shadow-lg text-white bg-myBlue hover:bg-sky-600"
+                onClick={checkInfo}
+              >
+                Log in
+              </button>
 
-                <button
-                    className="py-2 px-10 rounded-xl drop-shadow-lg text-white bg-myBlue hover:bg-sky-600"
-                >
-                    Log in    
-                </button>
+              <div className=" flex gap-1 text-sm justify-center items-center">
+                <p>don't have an account?</p>
+                <a href="/SignUp">
+                  <p className="text-myBlue hover:text-sky-600 ">create account</p>
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Right side */}
           <div className=" bg-myBlue w-2/6 flex justify-center items-center">
-            <img className=" w-56" src="https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif"/>
+            <img
+              className=" w-56"
+              src="https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif"
+            />
           </div>
         </div>
       </div>
