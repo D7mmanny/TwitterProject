@@ -35,7 +35,7 @@ const nav = useNavigate()
       .then((response) => {
         setUserApi(response.data);
       });
-  });
+  },[]);
 
   // onClick function
   const checkInfo = () => {
