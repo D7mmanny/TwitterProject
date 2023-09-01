@@ -184,15 +184,15 @@ function Home() {
                     {active=="Profile" && <Profile/>}
                 </div>
                 {/* all twit */}
-                <div className="h-3/5 overflow-y-auto flex flex-col-reverse">
-                    {apiTwit.map((item) =>{
+                <div className="h-3/5 overflow-y-auto scroll-p-0 ">
+                    {apiTwit.map((item) =>{ 
                         return(
                         <>
                             <Twit username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} />
                             
                         </>
                         )
-                    })}
+                    }).reverse()}
                 
                 </div>
             </div>
