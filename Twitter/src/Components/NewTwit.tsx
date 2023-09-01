@@ -1,8 +1,41 @@
-import React from 'react'
+import  { useState } from "react";
+import axios from 'axios';
 
 function NewTwit() {
     const ProfileUrl =localStorage.getItem("url")
-    
+    const userName  =localStorage.getItem("username")
+    const [error,setErorr]=useState("")
+    const [content, setcontent] = useState({
+      username:"",  
+      twitText: "",
+      lik:""
+    });
+  
+    const handleInput = (e) => {
+      e.persist();
+      setcontent({ ...content, [e.target.name]: e.target.value });
+    };
+  
+    const saveContentr =(e) =>{ 
+      e.preventDefault();
+      const data ={
+        username: userName,
+         twitText: content.twitText,
+        lik:"false"
+        
+          
+      }
+      if(data.twitText=="")
+      {setErorr(" it is empty")
+    }
+      else{
+        setErorr("")
+        axios.post(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts`,data)
+        .then();
+        
+      }
+         
+    }
     
     return (
         <div>
@@ -27,13 +60,15 @@ function NewTwit() {
                 
                 <textarea 
                 className='text-justify outline-none p-4'
-                name="" 
+                name="twitText" 
                 cols={70} 
                 rows={3} 
-                placeholder='What is happening'></textarea>
+                placeholder='What is happening'
+                onChange={handleInput}
+                ></textarea>
             </div>
             {/* button and icon */}
-            <div className='flex border-soled border-b-8'>
+            <div className='flex'>
                 <ul className='flex justify-evenly w-4/5 items-center text-sky-500'>
                     <a href="">
                         <svg 
@@ -89,12 +124,18 @@ function NewTwit() {
 
                 <div className='flex justify-end w-full my-5 mr-5'>
                 <button 
-                className='bg-sky-500 text-white w-24 h-10 rounded-full hover:bg-sky-600'>
+                className='bg-sky-500 text-white w-24 h-10 rounded-full hover:bg-sky-600'
+                onClick={saveContentr}
+                >
                 <b>Tweet</b> 
                 </button>
                 </div>
-
+                
                 </div>
+                <div className=" border-soled border-b-8 text-center">
+                {error}
+                </div>
+                
                     
         </div>
     )
