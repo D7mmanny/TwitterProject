@@ -6,7 +6,7 @@ import Nav from "../Components/Nav";
 
 
 function SignUpe() {
-    const [error,setErorr]=useState("")
+  const [error,setErorr]=useState("")
   const navg=useNavigate()
   const [user, setUser] = useState({
     name: "",
@@ -56,10 +56,11 @@ function SignUpe() {
         <div>
       <Nav />
       <div className="flex justify-center items-center">
-        <div className="flex border w-9/12 drop-shadow-lg mt-20">
+        <div className="flex border w-9/12 drop-shadow-lg mt-10">
           {/* Left side */}
-          <div className="flex flex-col gap-12 justify-center items-center w-4/6 bg-gray-100 py-32">
-                <h1 className="text-3xl">Sin up</h1>
+          <div className="flex flex-col gap-5 justify-center items-center w-4/6 bg-gray-100 py-16">
+            <div className="flex flex-col gap-10 justify-center items-center">
+            <h1 className="text-3xl">Sign up</h1>
                 <div className="flex flex-col gap-5 justify-center items-center">
 
                     <input 
@@ -100,6 +101,8 @@ function SignUpe() {
                     />
                     
                 </div>
+            </div>
+                
                 <div>
                 {error}
                 </div>
@@ -110,6 +113,13 @@ function SignUpe() {
                 >
                     Sign up    
                 </button>
+
+                <div className=" flex gap-1 text-sm justify-center items-center">
+                <p>you have an account?</p>
+                <a href="/">
+                  <p className="text-myBlue hover:text-sky-600 ">Log in</p>
+                </a>
+              </div>
           </div>
 
           {/* Right side */}
