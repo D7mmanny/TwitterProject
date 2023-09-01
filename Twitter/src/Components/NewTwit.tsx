@@ -8,7 +8,8 @@ function NewTwit() {
     const [content, setcontent] = useState({
       username:"",  
       twitText: "",
-      lik:""
+      lik:"",
+      url:""
     });
   
     const handleInput = (e) => {
@@ -21,7 +22,8 @@ function NewTwit() {
       const data ={
         username: userName,
          twitText: content.twitText,
-        lik:"false"
+        lik:"false",
+        url:ProfileUrl
         
           
       }

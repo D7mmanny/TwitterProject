@@ -1,5 +1,7 @@
 import React from "react";
-import{useState} from "react"
+import{useState ,useEffect} from "react"
+import axios from "axios"
+
 
 // Components
 import Profile from "../Components/Profile";
@@ -9,6 +11,24 @@ import Twit from "../Components/Twit";
 
 function Home() {
     const [active,setActive]=useState("Home")
+    type alltwt={
+        username:string;
+        twitText: string;
+        url: string;
+        lik: string;
+
+    }
+
+    const [apiTwit,setApiTwit]=useState<alltwt[]>([])
+
+    useEffect( ()=>{
+        axios
+        .get("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts")
+        .then((res) =>{
+            setApiTwit(res.data)
+        })
+    },[])
+
     return (
         <div>
         <div className="flex ">
@@ -163,11 +183,16 @@ function Home() {
                     {active=="Home" && <NewTwit/>}
                     {active=="Profile" && <Profile/>}
                 </div>
-                <div>
-                    <Twit imgUrl="" twitText="" lik="" />
-                </div>
                 {/* all twit */}
                 <div>
+                    {apiTwit.map((item) =>{
+                        return(
+                        <>
+                            <Twit username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} />
+                            
+                        </>
+                        )
+                    })}
                 
                 </div>
             </div>

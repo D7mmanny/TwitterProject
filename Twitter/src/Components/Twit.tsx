@@ -1,20 +1,26 @@
 interface Twits {
-  twitText: string;
-  imgUrl: string;
-  lik: string;
+    username:string;
+    twitText: string;
+    url: string;
+    lik: string;
 }
 
 function Twit(props: Twits) {
     return (
         <div className="border-b-2 border-gray-300">
-        <div className="flex pt-7  p-5 ">
+        <div className=" pt-7  p-5 ">
+            <div className="flex gap-5">
             <img
             className="border rounded-full w-14 h-14 p-0 mx-3"
-            src={"" + props.imgUrl}
+            src={"" + props.url}
             />
+            <h4><b>{props.username}</b> </h4>
+            <h4 className="text-gray-400">@{props.username}</h4>
+            </div>
+            
 
             <textarea
-            className="text-justify outline-none p-4"
+            className="text-justify outline-none mx-14"
             name="twitText"
             cols={70}
             rows={3}
