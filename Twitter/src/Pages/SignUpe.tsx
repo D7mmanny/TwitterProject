@@ -2,6 +2,7 @@ import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import validator from 'validator';
 import axios from 'axios';
+import Nav from "../Components/Nav";
 
 
 function SignUpe() {
@@ -49,77 +50,53 @@ function SignUpe() {
        
   }
     return (
+
         <div>
-        <div className="flex ">
-            
-            <div className=" w-2/4 h-screen">
-            
-                {/* sign up */}
-                <div className="h-screen flex justify-end items-center">
-                    <div className=" mt-10 w-96  flex flex-col gap-5 text-center">
-                    <h1 className="text-2xl">Sign up</h1>
-                    <input
-                        className="  placeholder:italic text-center rounded-full h-10  border-solid  border-2 border-black"
-                        name="name"
-                        type="text"
-                        placeholder="name"
-                    />
-                    <input
-                        className="  placeholder:italic text-center rounded-full h-10  border-solid  border-2 border-black"
-                        name="username"
-                        type="text"
-                        placeholder="Username"
-                    />
-                    <input
-                        className="placeholder:italic text-center rounded-full h-10 border-solid  border-2 border-black"
-                        name="email"
-                        type="email"
-                        placeholder="Email"
-                    />
-                    <input
-                        className=" placeholder:italic text-center rounded-full h-10  border-solid  border-2 border-black"
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                    />
-                    <input
-                        className="  placeholder:italic text-center rounded-full h-10  border-solid  border-2 border-black"
-                        name="ProfileUrlImg"
-                        type="text"
-                        placeholder="Profile URL img"
-                    />
+      <Nav />
+      <div className="flex justify-center items-center">
+        <div className="flex border w-9/12 drop-shadow-lg mt-20">
+          {/* Left side */}
+          <div className="flex flex-col gap-12 justify-center items-center w-4/6 bg-gray-100 py-32">
+                <h1 className="text-3xl">Sin up</h1>
+                <div className="flex flex-col gap-5 justify-center items-center">
 
-                    <div className="flex flex-col items-center  mt-10">
-                        {/* <div className="text-white mb-5">{error}</div> */}
-                        <button
-                        className=" text-white transform w-2/3 py-2 px-16 mb-12 rounded-full font-bold duration-300 bg-sky-500 border-transparent hover:bg-sky-600"
-                        type="submit"
-                        >
-                        Sign up
-                        </button>
-                    </div>
+                    <input 
+                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    type="text" 
+                    placeholder="Name"/>
+                    <input 
+                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    type="text" 
+                    placeholder="UserName"/>
+                    <input 
+                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    type="email" 
+                    placeholder="Email"/>
 
-                    </div>
+                    <input 
+                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    type="password" 
+                    placeholder="password"/>
+                    <input 
+                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    type="text" 
+                    placeholder="Profile URL img"/>
                 </div>
-                
-            
 
-            </div>
-                {/* twitter icon */}
-            <div className=" w-2/4 h-screen flex justify-center items-center">
-            <svg
-                viewBox="0 0 24 24"
-                className="h-1/3 w-1/3 text-sky-500  "
-                fill="currentColor"
-            >
-                <g>
-                <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
-                </g>
-            </svg>
-            </div>
+                <button
+                    className="py-2 px-10 rounded-xl drop-shadow-lg text-white bg-myBlue hover:bg-sky-600"
+                >
+                    Sign up    
+                </button>
+          </div>
 
+          {/* Right side */}
+          <div className=" bg-myBlue w-2/6 flex justify-center items-center">
+            <img className=" w-56" src="https://i.pinimg.com/originals/81/16/88/811688d44a9906c2b1db6cde2304168b.gif"/>
+          </div>
         </div>
-        </div>
+      </div>
+    </div>
     );
 }
 
