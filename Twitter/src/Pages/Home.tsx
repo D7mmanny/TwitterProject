@@ -184,7 +184,7 @@ function Home() {
                     {active=="Profile" && <Profile/>}
                 </div>
                 {/* all twit */}
-                <div className="h-3/5 overflow-y-auto">
+                <div className="h-3/5 overflow-y-auto flex flex-col-reverse">
                     {apiTwit.map((item) =>{
                         return(
                         <>
