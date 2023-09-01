@@ -1,6 +1,9 @@
 import React from 'react'
 
 function NewTwit() {
+    const ProfileUrl =localStorage.getItem("url")
+    
+    
     return (
         <div>
             {/* title */}
@@ -20,7 +23,7 @@ function NewTwit() {
             <div className='flex pt-7  p-5'>
                 <img 
                 className="border rounded-full w-14 h-14 p-0 mx-3"
-                src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_640.jpg" alt="" />
+                src={""+ProfileUrl}  />
                 
                 <textarea 
                 className='text-justify outline-none p-4'
