@@ -7,6 +7,7 @@ import axios from "axios"
 import Profile from "../Components/Profile";
 import NewTwit from "../Components/NewTwit";
 import Twit from "../Components/Twit";
+import AllTwit from "../Components/AllTwit";
 
 
 function Home() {
@@ -184,15 +185,8 @@ function Home() {
                     {active=="Profile" && <Profile/>}
                 </div>
                 {/* all twit */}
-                <div className="h-3/5 overflow-y-auto scroll-p-0 ">
-                    {apiTwit.map((item) =>{ 
-                        return(
-                        <>
-                            <Twit username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} />
-                            
-                        </>
-                        )
-                    }).reverse()}
+                <div className="h-3/5 overflow-y-auto ">
+                    <AllTwit/>
                 
                 </div>
             </div>
