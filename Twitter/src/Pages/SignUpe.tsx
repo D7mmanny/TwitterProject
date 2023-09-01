@@ -31,15 +31,17 @@ function SignUpe() {
         password: user.password,
         url: user.url
     }
-    if(data.username==""||data.email==""||data.password==""||data.url=="")
+    console.log(data.username);
+    
+    if(data.username==""||data.email==""||data.password==""||data.url=="" ||data.name=="")
     {setErorr("There is something empty")}
-    else if(data.username.length< 3 ||data.password.length<8){
+    else if(data.username.length< 3 || data.password.length<8 ||data.name.length< 5){
       setErorr("The length of the username and password must be greater than eight characters")
     }else if(!validator.isEmail(data.email)){
       setErorr("The email is incorrect")  
     }
     else{
-      axios.post(`https://64ec519ff9b2b70f2bfa171d.mockapi.io/CRUD-HW`,data)
+      axios.post(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/users`,data)
       .then(res=>{
           console.log(res);
           navg("/")
@@ -61,30 +63,50 @@ function SignUpe() {
                 <div className="flex flex-col gap-5 justify-center items-center">
 
                     <input 
-                    className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    className="py-2 px-12 rounded-xl drop-shadow-lg"
+                    name="name" 
                     type="text" 
-                    placeholder="Name"/>
+                    placeholder="Name"
+                    onChange={handleInput}
+                    />
                     <input 
                     className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    name="username"
                     type="text" 
-                    placeholder="UserName"/>
+                    placeholder="UserName"
+                    onChange={handleInput}
+                    />
                     <input 
                     className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    name="email"
                     type="email" 
-                    placeholder="Email"/>
+                    placeholder="Email"
+                    onChange={handleInput}
+                    />
 
                     <input 
                     className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    name="password"
                     type="password" 
-                    placeholder="password"/>
+                    placeholder="password"
+                    onChange={handleInput}
+                    />
                     <input 
                     className="py-2 px-12 rounded-xl drop-shadow-lg" 
+                    name="url"
                     type="text" 
-                    placeholder="Profile URL img"/>
+                    placeholder="Profile URL img"
+                    onChange={handleInput}
+                    />
+                    
+                </div>
+                <div>
+                {error}
                 </div>
 
                 <button
                     className="py-2 px-10 rounded-xl drop-shadow-lg text-white bg-myBlue hover:bg-sky-600"
+                    onClick={saveUser}
                 >
                     Sign up    
                 </button>
