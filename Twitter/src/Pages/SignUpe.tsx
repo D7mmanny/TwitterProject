@@ -2,6 +2,7 @@ import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import validator from 'validator';
 import axios from 'axios';
+import Nav from "../Components/Nav";
 
 
 function SignUpe() {
@@ -50,6 +51,7 @@ function SignUpe() {
   }
     return (
         <div>
+            <Nav/>
         <div className="flex ">
             
             <div className=" w-2/4 h-screen">
