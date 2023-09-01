@@ -1,4 +1,4 @@
-import  { useState,useEffect } from "react";
+import  { useState } from "react";
 import axios from 'axios';
 
 function NewTwit() {
@@ -17,7 +17,8 @@ function NewTwit() {
       setcontent({ ...content, [e.target.name]: e.target.value });
     };
   
-    const saveContentr =(e) =>{ 
+    const saveContentr =async (e) =>{ 
+         
       e.preventDefault();
       const data ={
         username: userName,
@@ -34,12 +35,12 @@ function NewTwit() {
         setErorr("")
         axios.post(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts`,data)
         .then();
-        
+       
       }
-         
     }
 
     
+
     
     return (
         <div>
