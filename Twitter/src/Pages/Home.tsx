@@ -255,7 +255,7 @@ function Home() {
 
             <div className="border-solid border-y-2 border-gray-200 p-5">
               <p className="text-gray-400">Git hup account</p>
-              <a href="">
+              <a href="https://github.com/D7mmanny">
                 <b>Abdulrahman</b>{" "}
               </a>
             </div>
@@ -267,7 +267,7 @@ function Home() {
             </div>
             <div className="border-solid border-b-2 border-gray-200 p-5">
               <p className="text-gray-400">LinkedIn account</p>
-              <a href="">
+              <a href="https://www.linkedin.com/in/abdulrahman-mutiran/">
                 <b>Abdulrahman</b>{" "}
               </a>
             </div>
