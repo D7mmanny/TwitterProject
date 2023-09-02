@@ -24,15 +24,7 @@ function Home() {
 
   };
 
-  const [apiTwit, setApiTwit] = useState<alltwt[]>([]);
-
-  useEffect(() => {
-    axios
-      .get("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts")
-      .then((res) => {
-        setApiTwit(res.data);
-      });
-  }, []);
+ 
 
   return (
     <div>
