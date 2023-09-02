@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import AllTwit from "./AllTwit";
+import Twit from "./Twit";
+import React from "react";
 
 function NewTwit() {
   const ProfileUrl = localStorage.getItem("url");
@@ -12,12 +13,28 @@ function NewTwit() {
     lik: "",
     url: "",
   });
+  type alltwt={
+    username:string;
+    twitText: string;
+    url: string;
+    lik: string;
 
-  const handleInput = async (e) => {
-    e.persist();
-    setcontent({ ...content, [e.target.name]: e.target.value });
-  };
+}
+const [apiTwit,setApiTwit]=useState<alltwt[]>([])
 
+
+  React.useEffect(()=>{
+    getPosts()  
+  },[]);
+
+  const getPosts =()=>{
+    axios
+    .get("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts")
+    .then((res) =>{
+        setApiTwit(res.data)
+    })
+  }
+  
   const saveContentr = (e) => {
     e.preventDefault();
     const data = {
@@ -25,18 +42,19 @@ function NewTwit() {
       twitText: content.twitText,
       lik: "false",
       url: ProfileUrl,
-    }
-    
+    };
+
     if (data.twitText == "") {
       setErorr(" it is empty");
     } else {
       setErorr("");
       axios
         .post(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts`, data)
-        .then() 
-
+        .then((res)=>{
+          console.log(res);
+          getPosts()
+        })
     }
-    
   };
 
   return (
@@ -70,7 +88,7 @@ function NewTwit() {
           cols={70}
           rows={3}
           placeholder="What is happening"
-          onChange={handleInput}
+          onChange={(e) =>{setcontent({ ...content, twitText: e.target.value })}}
         ></textarea>
       </div>
       {/* button and icon */}
@@ -143,8 +161,16 @@ function NewTwit() {
       <div className=" border-soled border-b-8 text-center">{error}</div>
       {/* all twit */}
       <div className="Posts overflow-y-auto ">
-        <AllTwit/>       
-        </div>
+      {
+        apiTwit.map((item) =>{ 
+            return(
+            <>
+                <Twit username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} /> 
+            </>
+            )
+        }).reverse()  
+      }  
+      </div>
     </div>
   );
 }

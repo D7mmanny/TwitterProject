@@ -12,13 +12,17 @@ function AllTwit() {
     }
     const [apiTwit,setApiTwit]=React.useState<alltwt[]>([])
 
-    React.useEffect( ()=>{
-        axios
-        .get("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts")
-        .then((res) =>{
-            setApiTwit(res.data)
-        })
-    },[apiTwit])
+    const getPosts = () =>{
+      axios
+      .get("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts")
+      .then((res) =>{
+          setApiTwit(res.data)
+      })
+    }
+
+    React.useEffect(()=>{
+      getPosts()  
+    },[]);
 
 
   return (
