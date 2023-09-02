@@ -166,7 +166,7 @@ function Twit(props: Twits) {
                 </li>
               </ul>
             ) : (
-              <div />
+              <div/>
             )}
           </div>
         </ul>
