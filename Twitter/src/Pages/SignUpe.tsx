@@ -17,13 +17,8 @@ function SignUpe() {
   });
  
   
-  const handleInput = (e) => {
-    e.persist();
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
 
-  const saveUser =(e) =>{ 
-    e.preventDefault();
+  const saveUser =() =>{ 
     const data ={
         name: user.name,
         username: user.username,
@@ -68,21 +63,21 @@ function SignUpe() {
                     name="name" 
                     type="text" 
                     placeholder="Name"
-                    onChange={handleInput}
+                    onChange={(e) =>{setUser({ ...user, name: e.target.value })}}
                     />
                     <input 
                     className="py-2 px-12 rounded-xl drop-shadow-lg" 
                     name="username"
                     type="text" 
                     placeholder="UserName"
-                    onChange={handleInput}
+                    onChange={(e) =>{setUser({ ...user, username: e.target.value })}}
                     />
                     <input 
                     className="py-2 px-12 rounded-xl drop-shadow-lg" 
                     name="email"
                     type="email" 
                     placeholder="Email"
-                    onChange={handleInput}
+                    onChange={(e) =>{setUser({ ...user, email: e.target.value })}}
                     />
 
                     <input 
@@ -90,14 +85,14 @@ function SignUpe() {
                     name="password"
                     type="password" 
                     placeholder="password"
-                    onChange={handleInput}
+                    onChange={(e) =>{setUser({ ...user, password: e.target.value })}}
                     />
                     <input 
                     className="py-2 px-12 rounded-xl drop-shadow-lg" 
                     name="url"
                     type="text" 
                     placeholder="Profile URL img"
-                    onChange={handleInput}
+                    onChange={(e) =>{setUser({ ...user, url: e.target.value })}}
                     />
                     
                 </div>

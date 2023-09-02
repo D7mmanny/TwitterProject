@@ -37,8 +37,7 @@ const [apiTwit,setApiTwit]=useState<alltwt[]>([])
     })
   }
   
-  const saveContentr = (e) => {
-    e.preventDefault();
+  const saveContentr = () => {
     const data = {
       username: userName,
       twitText: content.twitText,
