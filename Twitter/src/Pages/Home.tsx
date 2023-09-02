@@ -6,11 +6,17 @@ import Profile from "../Components/Profile";
 import NewTwit from "../Components/NewTwit";
 
 function Home() {
+  const isLogin=localStorage.getItem("login")
   const nav = useNavigate();
+  if(isLogin != "true"){
+    window.location.href="/";
+  }
+ 
   const logOut = () => {
     localStorage.removeItem("name");
     localStorage.removeItem("username");
     localStorage.removeItem("url");
+    localStorage.removeItem("login");
     nav("/");
   };
   const [active, setActive] = useState("Home");

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../Components/Nav";
 
 function LogIn() {
+ 
 
 const nav = useNavigate()
   // interfaces
@@ -49,6 +50,7 @@ const nav = useNavigate()
           localStorage.setItem("name", user.name);
           localStorage.setItem("username", user.username);
           localStorage.setItem("url", user.url);
+          localStorage.setItem("login","true")
           nav("/Home")
         } else {
           setErorr("Incorect username or password");
