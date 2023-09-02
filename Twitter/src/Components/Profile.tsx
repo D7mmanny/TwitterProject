@@ -6,8 +6,8 @@ import PersonalTwitt from "./PersonalTwitt";
 import Likes from "./Likes";
 
 function Profile() {
-const name = localStorage.getItem("name");
-const [active , setActive] = React.useState("posts")
+  const name = localStorage.getItem("name");
+  const [active, setActive] = React.useState("posts");
 
   return (
     <div>
@@ -42,21 +42,33 @@ const [active , setActive] = React.useState("posts")
       {/* Navigate */}
       <div>
         <ul className="flex justify-center gap-72 pt-4 font-semibold">
-          <a className=" cursor-pointer hover:text-sky-600" onClick={()=>{setActive("posts")}}><li>Posts</li></a>
-          <a className=" cursor-pointer hover:text-sky-600" onClick={()=>{setActive("likes")}}><li>Likes</li></a> 
+          <a
+            className=" cursor-pointer hover:text-sky-600"
+            onClick={() => {
+              setActive("posts");
+            }}
+          >
+            <li>Posts</li>
+          </a>
+          <a
+            className=" cursor-pointer hover:text-sky-600"
+            onClick={() => {
+              setActive("likes");
+            }}
+          >
+            <li>Likes</li>
+          </a>
         </ul>
       </div>
-      {active == "posts" &&
-      <div  className="Posts2 overflow-y-auto ">
-         <PersonalTwitt/>
-      </div>
-      
-       }
-      {active == "Likes" &&
-      <div  className="Posts2 overflow-y-auto ">
-      <Likes/>
-   </div>
+      {active === "posts" && 
+        <div className="Posts2 overflow-y-auto ">
+          <PersonalTwitt />
+        </div>
       }
+      {active === "likes" &&  
+      <div className="Posts2 overflow-y-auto ">
+      <Likes />
+    </div>}
     </div>
   );
 }
