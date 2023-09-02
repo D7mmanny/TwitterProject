@@ -26,6 +26,7 @@ function NewTwit() {
       lik: "false",
       url: ProfileUrl,
     }
+    
     if (data.twitText == "") {
       setErorr(" it is empty");
     } else {
