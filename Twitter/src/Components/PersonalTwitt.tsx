@@ -4,6 +4,7 @@ import Twit from './Twit';
 
 function PersonalTwitt() {
     type alltwt={
+        id:string;
         username:string;
         twitText: string;
         url: string;
@@ -29,7 +30,7 @@ function PersonalTwitt() {
             if(item.username == localUserName ) {
                 return(
                     <>
-                    <Twit username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} /> 
+                    <Twit id={item.id} username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} /> 
                     </>
                     )
             }

@@ -1,4 +1,3 @@
-import React from "react";
 
 function Header() {
     const url = localStorage.getItem("url");
@@ -11,7 +10,7 @@ function Header() {
         <div className="bg-myBlue h-32 relative"></div>
         <img 
                 className=" absolute top-40 border rounded-full w-28 h-28 p-0 mx-3"
-                src={url} alt="" />
+                src={""+url} alt="" />
 
         {/* Info */}
         <div className="mt-16 ml-9 flex flex-col gap-3">
