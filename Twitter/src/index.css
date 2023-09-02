@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.Posts{
+    height:59vh;
+}
+.Posts2{
+    height:49vh;
+}

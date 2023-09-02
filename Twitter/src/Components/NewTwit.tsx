@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import AllTwit from "./AllTwit";
 
 function NewTwit() {
   const ProfileUrl = localStorage.getItem("url");
@@ -32,7 +33,7 @@ function NewTwit() {
       axios
         .post(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts`, data)
         .then() 
-          
+
     }
     
   };
@@ -139,6 +140,10 @@ function NewTwit() {
         </div>
       </div>
       <div className=" border-soled border-b-8 text-center">{error}</div>
+      {/* all twit */}
+      <div className="Posts overflow-y-auto ">
+        <AllTwit/>       
+        </div>
     </div>
   );
 }

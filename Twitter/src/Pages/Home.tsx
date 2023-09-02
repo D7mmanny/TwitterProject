@@ -178,16 +178,11 @@ function Home() {
             </div>
 
             {/* The middle side */}
-            <div className=" w-5/12 h-screen">
+            <div className=" border w-5/12 h-screen">
                 {/* new twit */}
                 <div className="h-2/5">
                     {active=="Home" && <NewTwit/>}
                     {active=="Profile" && <Profile/>}
-                </div>
-                {/* all twit */}
-                <div className="h-3/5 overflow-y-auto ">
-                    <AllTwit/>
-                
                 </div>
             </div>
 

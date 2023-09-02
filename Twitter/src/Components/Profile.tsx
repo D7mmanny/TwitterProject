@@ -2,6 +2,7 @@ import React from "react";
 
 // components
 import Header from "./Header";
+import PersonalTwitt from "./PersonalTwitt";
 
 function Profile() {
 const name = localStorage.getItem("name");
@@ -44,7 +45,12 @@ const [active , setActive] = React.useState("posts")
           <a className=" cursor-pointer hover:text-sky-600" onClick={()=>{setActive("likes")}}><li>Likes</li></a> 
         </ul>
       </div>
-      {/* {active == "posts" && } */}
+      {active == "posts" &&
+      <div  className="Posts2 overflow-y-auto ">
+         <PersonalTwitt/>
+      </div>
+      
+       }
       {/* {active == "Likes" && } */}
     </div>
   );
