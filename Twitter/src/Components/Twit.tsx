@@ -76,7 +76,14 @@ function Twit(props: Twits) {
       }).then(()=>{
         window.location.reload(false);
       })
-    }   
+    }  else if(props.lik=="true") {
+      axios.put(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts/${props.id}`,{
+        lik:"false"
+      }).then(()=>{
+        window.location.reload(false);
+      })
+
+    }
   }
   
   
