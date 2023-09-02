@@ -25,21 +25,22 @@ function Twit(props: Twits) {
   const handleClick = () => {
     setClicked(!clicked);
     localStorage.setItem("postTwitText", props.twitText);
+    
   };
 
   const [apiTwit, setApiTwit] = React.useState<alltwt[]>([]);
   const [postId, setPostId] = React.useState("");
-
   
 
+  const  deletPost = async () => {
 
-
-  const deletPost = () => {
-    axios
-    .get("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts")
-    .then((res) =>{
-        setApiTwit(res.data)
-    }) 
+    fetch("https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts")
+    .then (response => {
+      return  response.json()
+    })
+    .then(data => {
+        setApiTwit(data)
+    })
 
     apiTwit.map((item) => {
       if (item.twitText == localTwittText) {
@@ -47,9 +48,11 @@ function Twit(props: Twits) {
 
       }
     })
+
     axios.delete(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts/${postId}`)
   .then(() => {
     console.log(`Deleted post with ID ${postId}`);
+    window.location.reload(false);
   })
   .catch(error => {
     console.log(error);
