@@ -2,7 +2,7 @@ import LikeF from "./LikeF";
 import LikeT from "./LikeT";
 import React from "react";
 import axios from "axios";
-import AllTwit from "./AllTwit";
+
 
 interface Twits {
   id:string;
@@ -61,7 +61,7 @@ function Twit(props: Twits) {
     axios.delete(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts/${postId}`)
   .then(() => {
     console.log(`Deleted post with ID ${postId}`);
-    window.location.reload(false);
+    window.location.reload();
   })
   .catch(error => {
     console.log(error);
@@ -74,13 +74,13 @@ function Twit(props: Twits) {
       axios.put(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts/${props.id}`,{
         lik:"true"
       }).then(()=>{
-        window.location.reload(false);
+        window.location.reload();
       })
     }  else if(props.lik=="true") {
       axios.put(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts/${props.id}`,{
         lik:"false"
       }).then(()=>{
-        window.location.reload(false);
+        window.location.reload();
       })
 
     }
