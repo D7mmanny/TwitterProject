@@ -14,14 +14,7 @@ function Home() {
     nav("/");
   };
   const [active, setActive] = useState("Home");
-  type alltwt = {
-    id:string
-    username: string;
-    twitText: string;
-    url: string;
-    lik: string;
 
-  };
 
  
 
