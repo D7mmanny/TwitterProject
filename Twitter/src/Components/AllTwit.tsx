@@ -8,7 +8,6 @@ function AllTwit() {
         twitText: string;
         url: string;
         lik: string;
-
     }
     const [apiTwit,setApiTwit]=React.useState<alltwt[]>([])
 
@@ -23,7 +22,6 @@ function AllTwit() {
     React.useEffect(()=>{
       getPosts()  
     },[]);
-
 
   return (
     <div>
@@ -41,3 +39,4 @@ function AllTwit() {
 }
 
 export default AllTwit
+
