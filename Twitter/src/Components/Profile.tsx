@@ -3,6 +3,7 @@ import React from "react";
 // components
 import Header from "./Header";
 import PersonalTwitt from "./PersonalTwitt";
+import Likes from "./Likes";
 
 function Profile() {
 const name = localStorage.getItem("name");
@@ -51,7 +52,11 @@ const [active , setActive] = React.useState("posts")
       </div>
       
        }
-      {/* {active == "Likes" && } */}
+      {active == "Likes" &&
+      <div  className="Posts2 overflow-y-auto ">
+      <Likes/>
+   </div>
+      }
     </div>
   );
 }
