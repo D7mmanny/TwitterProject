@@ -4,6 +4,7 @@ import Twit from "../Components/Twit";
 
 function AllTwit() {
     type alltwt={
+        id:string;
         username:string;
         twitText: string;
         url: string;
@@ -29,7 +30,7 @@ function AllTwit() {
         apiTwit.map((item) =>{ 
             return(
             <>
-                <Twit username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} /> 
+                <Twit id={item.id}  username={item.username} url={item.url} twitText={item.twitText} lik={item.lik} /> 
             </>
             )
         }).reverse()  

@@ -2,23 +2,30 @@ import LikeF from "./LikeF";
 import LikeT from "./LikeT";
 import React from "react";
 import axios from "axios";
+import AllTwit from "./AllTwit";
 
 interface Twits {
+  id:string;
   username: string;
   twitText: string;
   url: string;
   lik: string;
+ 
 }
 
 function Twit(props: Twits) {
 
     type alltwt={
+        id:string;
         username:string;
         twitText: string;
         url: string;
         lik: string;
-        id:string;
     }
+
+    
+    
+    
 
   const localTwittText = localStorage.getItem("postTwitText");
   const [clicked, setClicked] = React.useState(false);
@@ -48,6 +55,8 @@ function Twit(props: Twits) {
 
       }
     })
+    console.log(postId);
+    
 
     axios.delete(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts/${postId}`)
   .then(() => {
@@ -58,6 +67,19 @@ function Twit(props: Twits) {
     console.log(error);
   });
   };
+  
+
+  const likeUpdet =()=>{
+    if(props.lik=="false") {
+      axios.put(`https://64f20ce40e1e60602d24a55c.mockapi.io/twitter/Posts/${props.id}`,{
+        lik:"true"
+      }).then(()=>{
+        window.location.reload(false);
+      })
+    }   
+  }
+  
+  
   return (
     <div className="border-b-2 border-gray-300">
       <div className=" pt-7  p-5 ">
@@ -109,9 +131,12 @@ function Twit(props: Twits) {
                 <path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
                 </svg>
             </a> */}
-          <a>
+          <a onClick={likeUpdet}>
             {props.lik == "false" && <LikeF />}
             {props.lik == "true" && <LikeT />}
+            
+            
+            
           </a>
           <a>
             <svg

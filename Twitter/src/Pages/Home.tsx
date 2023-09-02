@@ -17,10 +17,12 @@ function Home() {
   };
   const [active, setActive] = useState("Home");
   type alltwt = {
+    id:string
     username: string;
     twitText: string;
     url: string;
     lik: string;
+
   };
 
   const [apiTwit, setApiTwit] = useState<alltwt[]>([]);
@@ -211,6 +213,7 @@ function Home() {
           <div className="h-2/5">
             {active == "Home" && <NewTwit />}
             {active == "Profile" && <Profile />}
+            
           </div>
         </div>
 
